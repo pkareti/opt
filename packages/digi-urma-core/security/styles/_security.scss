@@ -1,0 +1,68 @@
+header .login {
+  margin-top: $spacing-unit;
+  right: 0;
+  @include media(max-width 1024px){
+    margin-top: 30px;
+    right: 15px;
+    .userDetails .login-buttons{
+      margin-right: 60px;
+    }
+  }
+}
+
+.login-buttons {
+  width: 100%;
+  .box {
+    width: 100%;
+    &:last-child{
+      width: 70px !important;
+      min-width: 70px;
+      margin-right: 0px;
+      float: left;
+      margin-right: -15px;
+    }
+    @include media($large){
+      &:first-child,
+      &:nth-child(2) {
+        float: left;
+        width: 38%;
+        margin-right: 2%;
+      }
+      &:nth-child(3),
+      &:nth-child(4) {
+        float: right;
+        width: 20%;
+      }
+      button {
+        height: 34px;
+      }
+      input {
+        margin-bottom: 0;
+        height: 34px;
+      }
+    }
+  }
+  @include media(max-width 1000px){
+    width: auto;
+    text-align: right;
+    .box{
+      width: 25%;
+      min-width: 90px;
+      vertical-align: middle;
+      display: inline-block;
+      margin-right: 1%;
+      margin-bottom: 0px;
+      input,button{
+        height: 32px;
+        margin-bottom: 0px;
+        text-align: left;
+      }
+    }
+  }
+  @include media(max-width 600px){
+    .box{
+      width: 20%;
+      min-width: 70px;
+    }
+  }
+}

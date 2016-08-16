@@ -1,0 +1,214 @@
+.sub-container,
+.new-container,
+.sub-container li,
+.new-container li {
+  @include span-columns(12);
+  @include omega;
+  @include clearfix;
+}
+
+.accordion-header {
+  @include clearfix;
+  .title {
+    width: auto;
+    float: left;
+  }
+  .type {
+    @include span-columns(6);
+    @include omega;
+    @include media($large) {
+      @include span-columns(3);
+    }
+    > div {
+      float: right;
+    }
+
+  }
+  .buttons {
+    width:auto;
+    display:block;
+    float:right;
+    @include media(max-width 1024px){
+      width: auto;
+      @include position(absolute, 15px 15px null null);
+    }
+    @include media(max-width 768px){
+      top:15px;
+    }
+    span{
+      float: right;
+      button{
+        margin-right: 10px;
+      }
+      &:first-child{
+        button{
+          margin-right: 0px;
+        }
+      }
+      @include media(max-width 1024px){
+        font-size: 0.9em;
+        button{
+          @include padding(6px 10px);
+          margin-right: 1px !important;
+        }
+      }
+    }
+    .helpAccordion{
+      @include size(23px);
+      background: transparent;
+      border: 0;
+      @include padding(0px);
+      float: left;
+      display: none;
+      img{
+        @include size(100%);
+      }
+    }
+    section{
+      span{
+        float:left;
+      }        
+    }
+  }
+}
+.outlined .accordion-content{
+  @include span-columns(12 of 12);
+  @include omega;
+  .accordion-header {
+    .type {
+      margin-bottom: $spacing-unit;
+      @include media($large){
+        margin-bottom: 0;
+      }
+    }
+  }
+  .offset {
+    @include span-columns(12);
+    @include media($large){
+      @include span-columns(1 of 11);
+    }
+  }
+  .accordion-wrapper {
+    @include span-columns(12 of 12);
+  }
+  .accordion-column {
+    @include padding(5px 10px);
+    margin-bottom: $spacing-unit;
+    @include span-columns(12 of 12);
+    @include omega(even);
+    @include media(max-width 1024px) {
+      @include span-columns(6 of 12);
+      @include omega-reset(even, 8);
+      @include omega(4n);
+      &.newWan{
+        @include span-columns(6 of 12);
+        @include omega(even);
+      }
+    }
+    @include media($large) {
+        @include span-columns(3 of 12);
+        @include omega-reset(even, 12);
+        @include omega-reset(4n, 12);
+        @include omega(4n);
+    }
+  }
+  .accordion-column-wide {
+    @include padding(5px 10px);
+    margin-bottom: $spacing-unit;
+    @include media($large) {
+        @include span-columns(4 of 12);
+        @include omega-reset(even, 12);
+    }
+    @include media(max-width 1024px) {
+        @include span-columns(12 of 12);
+        @include omega(even);
+    }
+    ul.table-container li{
+      width: 100%;
+    }
+  }
+  .accordion-column-split {
+    @include span-columns(3 of 6);
+    @include omega(even);
+  }
+}
+.helpAccordion {
+  display: none;
+}
+.outlined {
+  @include span-columns(12);
+  .helpAccordion {
+    display: none;
+    @include media($large){
+      display: block;
+      float: right;
+      @include omega;
+      @include span-columns(1 of 12);
+    }
+  }
+  .buttons{
+    .helpAccordion{
+      @include media(max-width 1024px){
+        display: block;
+        margin: 2px 0px 0px 3px;
+      }
+    }
+  }
+}
+.accordion-title{
+  @include position(absolute, 0px null null -76px);
+  font-weight: bold;
+  font-size: .9em;
+  @include padding(10px);
+  border-right: none;
+  @include media(max-width 1280px){
+      font-size: 0.8em;
+      left: -60px;  
+      max-width: 60px;
+      overflow: hidden;
+      text-overflow: ellipsis;   
+    } 
+  @include media(max-width 1024px){
+    @include position(absolute, -30px null null -10px);
+    max-width: 100%;
+    font-size: 0.9em;
+  }
+}
+.drag-container{
+  display: block;
+  position:absolute;
+  right: 15px;
+  background: #fff;
+  .dragWrapper{
+    display: block;
+    float: right;
+    .moveIcon{
+      @include size(20px);
+      @include padding(0);
+      @include margin(2px);
+      cursor: pointer;
+      padding-bottom: 0px;
+    }
+  }
+}
+.outlined .dragWrapper,.accordionUl li:first-child .dragWrapper .mvUp,.accordionUl li:last-child .dragWrapper .mvDown{
+  display: none;
+}
+.accordionUl li{
+  @include position(relative);
+  @include media(max-width 1024px){
+    margin-top: 25px;
+  }
+  .accordion-header{
+    a{
+      margin-bottom: 0px;
+    }
+  }
+}
+.accordionIcon{
+  vertical-align: middle;
+}
+.accordion-two-coloumn{
+  width: 50%;
+  float: left;
+}

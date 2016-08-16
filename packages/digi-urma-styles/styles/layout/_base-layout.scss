@@ -1,0 +1,82 @@
+//***********LAYOUT**********//
+//$spacing-unit: 15px;
+//$small: new-breakpoint(max-width 500px 8);
+//$medium: new-breakpoint(max-width 1000px 12);
+
+body{
+  background: $primarycolor;
+  line-height: 1.2;
+}
+
+.main-container,
+.page-container,
+.header-wrapper,
+.page-header {
+  @include span-columns(12);
+  @include omega;
+  @include clearfix;
+  min-width: 500px;
+}
+.main-container{
+  min-width: 483px;
+}
+.home-container,
+.page-container {
+  .row {
+    @include clearfix;
+  }
+}
+
+.home-container {
+  margin: 0 0 ($spacing-unit*2) 0;
+}
+
+.page-container {
+  padding: $spacing-unit;
+  background: $white;
+  border-radius: 2px;
+  border: 1px solid $medium-gray;
+  box-shadow: 0px 2px 2px darken($light-gray, 5%);
+  h1 {
+    margin: 0;
+  }
+}
+
+.float-right {
+  float: right;
+}
+.indent {
+  margin-left: $spacing-unit;
+}
+.box {
+  margin-bottom: $spacing-unit;
+}
+.margin-top {
+  margin-top: $spacing-unit;
+}
+.center {
+  text-align: center;
+}
+.inner-container{
+  max-width: 1300px;
+  @include margin(0 auto);
+  float: none;
+  @include media(max-width 1450px){
+    max-width: 1130px;
+  } 
+  @include media(max-width 1300px){
+    max-width: 1100px;
+  }
+  @include media(max-width 1280px){
+    max-width: 1024px;
+  } 
+  @include media(max-width 1150px){
+    max-width: 940px;
+  }  
+  @include media(max-width 1060px){
+    max-width: 890px;
+  }  
+  @include media(max-width 1024px){
+    max-width: 1024px;
+  } 
+}

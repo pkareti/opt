@@ -1,0 +1,64 @@
+.panel-full-width, .panel-medium, .panel-wide, .panel-narrow {
+  @include clearfix;
+  @include span-columns(12);
+  margin-bottom: $spacing-unit;
+}
+
+.panel-wide {
+  @include span-columns(12);
+  @include media($large){
+    @include span-columns(6 of 12);
+  }
+}
+
+.panel-medium {
+  @include media($medium){
+    @include span-columns(12 of 12);
+  }
+  @include media($large){
+    @include span-columns(4 of 12);
+  }
+}
+
+.panel-narrow {
+  @include media($medium){
+    @include span-columns(12 of 12);
+  }
+  @include media($large){
+    @include span-columns(3 of 12);
+  }
+}
+
+.panel-wide-half {
+  @include span-columns(12);
+  @include media($large){
+    @include span-columns(3 of 6);
+    @include omega(even)
+  }
+}
+
+.panel-tri-column {
+  @include span-columns(4 of 12);
+  @include media($large){
+    @include span-columns(1 of 3);
+  }
+}
+
+.panel-two-column {
+  @include span-columns(6 of 12);
+  @include padding(5px 0);
+  white-space: nowrap;
+}
+
+.panel-tri-column:empty::after {
+  content: ".";
+  visibility: hidden;
+}
+
+.omega {
+  @include omega;
+}
+
+.panel-content {
+  @include clearfix;
+}

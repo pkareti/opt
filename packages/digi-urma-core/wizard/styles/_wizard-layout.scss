@@ -1,0 +1,33 @@
+.wizard-content-area-left {
+  @include span-columns(12);
+  @include media($medium) {
+    @include span-columns(6 of 12);
+  }
+  @include media($large) {
+    @include span-columns(8 of 12);
+  }
+}
+
+.wizard-images, .wizard-content-text {
+  @include span-columns(12);
+  @include media($large) {
+    @include span-columns(4 of 8);
+  }
+}
+
+.wizard-content-area-right {
+  @include span-columns(12);
+  @include media($medium) {
+    @include span-columns(6 of 12);
+  }
+  @include media($large) {
+    @include span-columns(4 of 12);
+  }
+  @include omega();
+}
+
+.wizard-buttons-wrapper {
+  @include span-columns(12);
+  @include omega;
+  @include clearfix;
+}

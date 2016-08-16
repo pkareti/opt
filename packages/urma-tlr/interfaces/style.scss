@@ -1,0 +1,142 @@
+.ethernet-details{
+	@include span-columns(3);
+	@include media(max-width 1024px){
+      @include span-columns(12 of 12);
+    }
+    @include media($large){
+      @include span-columns(3 of 12);
+    }
+    list-style: none;
+    padding: 0px;
+    font-size: 14px;
+    table{
+      margin-left:20px;
+      font-size:12px;
+		tr td {
+			  @include padding(0px 0px);
+			  vertical-align: top;
+			  white-space:nowrap;
+			  overflow-wrap: break-word;
+				  span{
+				  	display: inline-block;
+				  }
+			}
+    }
+
+
+}
+
+.ethernet-configure,.cellular-configure{
+	@include span-columns(4);
+	@include media(max-width 1024px){
+      @include span-columns(12 of 12);
+    }
+    @include media($large){
+      @include span-columns(4 of 12);
+      @include shift(1);
+    }
+}
+.wifi-details,.wifi-configure,.cellular-details{
+	@include span-columns(4);
+	@include media(max-width 1024px){
+      @include span-columns(12 of 12);
+      @include margin(0 0 10px 0);
+    }
+    @include media($large){
+      @include span-columns(4 of 12);
+    }
+}
+.border-box{
+  @include border-width(1px);
+  @include border-style(solid);
+  @include border-color(#ccc);
+  @include padding(15px);
+  @include margin(0 0 15px 0px);
+  &:last-child{
+  	@include margin(0 0 0px 0px);
+  }
+  h4{
+    text-transform: capitalize;
+    margin-bottom: 5px;
+  }
+  table{
+    font-size: 0.8em;
+    td{
+      vertical-align: top;
+      white-space: nowrap;
+      input:not([type="radio"]),select{
+        @include size(100% 34px);
+      }
+      textarea{
+        @include size(100% 60px);
+      }
+    }
+  }
+  h5{
+    border-bottom: 1px solid #ccc;
+    @include padding(15px);
+    @include margin(-15px -15px 15px);
+  }
+  form{
+    padding: 10px;
+    position:relative;
+  }
+}
+ul.table-container{
+  list-style: none;
+  @include padding(0);
+  font-size: 1em;
+  li{
+    @include media(max-width 1024px){
+      @include span-columns(6 of 12);
+      @include omega(2n);
+    }
+  }
+  table{
+    margin-left:35px;
+    width: calc(100% - 35px);
+    td{
+    	@include padding(0);
+    }
+  }
+}
+.wifi-configure .border-box,ethernet-configure .border-box{
+  @include media(max-width 1024px){
+    @include span-columns(6 of 12);
+    @include omega(2n);
+  }
+}
+.areaDesc{
+  &.defaultOk{
+    background-color: #84C361;
+    background-image:url('/images/check.png');
+  }
+  &:after{
+    content: ' ';
+    display: block;
+    @include position(absolute, 70px -10px null null);
+    @include size(20px);
+    border-radius: 50%;
+    background-color: #ccc;
+    background-image:url('/images/refresh.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:14px;
+  }
+}
+.modal-save h6{
+  margin: 5px;
+  display: block;
+  float: left;
+}
+.modal-save .border-box h5{
+  font-size: 1em !important;
+}
+
+.interface-header {
+	margin-right: 10px;
+	span {
+		margin-bottom: 3px;
+		margin-left: 7px;
+	}
+}

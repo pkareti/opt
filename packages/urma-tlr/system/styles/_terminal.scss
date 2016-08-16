@@ -1,0 +1,12 @@
+.terminal {
+  @include span-columns(12);
+  height: 600px;
+  overflow: auto;
+  background-color: black;
+  color: white;
+}
+
+.terminal-output-line {
+  margin: 0px !important;
+  width: 100%;
+}

@@ -1,0 +1,46 @@
+.accordion-content{
+  h5 {
+    text-transform: none;
+  }
+  ul {
+    @include margin(0);
+    @include padding(0);
+  }
+  select{
+    @include margin(0);
+    @include padding(5px);
+    width:  100%;
+  }
+}
+
+.probe-settings-form .panel-two-column{
+  span{
+    float: left;
+    width: 18%;
+    margin-left:2%;
+  }
+  div input{
+    float: left;
+    width: 48%;
+    margin-right:2%;
+    margin-bottom: 0px;
+  }
+  .input-full{
+    width: 100%;
+  }
+  select{
+    float: left;
+    width: 48%;
+    margin-left:2%;
+  }
+  .error{
+    clear: both;
+  }
+}
+
+table,ul,p{
+  font-size: 0.9em;
+}
+.alignPadd{
+  padding-left: 20px;
+}
